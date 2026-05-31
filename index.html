@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiches Loups-Garous de Thiercelieux</title>
+  <style>
+    /* ===== RESET ET BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* ===== CONTAINER PRINCIPAL ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* ===== EN-TÊTE ===== */
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    /* ===== BARRE DE RECHERCHE ===== */
+    .search-container {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    #search {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 25px;
+      font-size: 16px;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    #search:focus {
+      border-color: #ff6b6b;
+    }
+
+    /* ===== FILTRES PAR CAMP ===== */
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+      background-color: #e0e0e0;
+      color: #555;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-btn.active {
+      background-color: #ff6b6b;
+      color: white;
+    }
+
+    /* ===== CARTES DES PERSONNAGES ===== */
+    .characters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20px;
+    }
+
+    .character-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-left: 5px solid;
+    }
+
+    .character-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Couleurs par camp */
+    .character-card.loup {
+      border-left-color: #d32f2f;
+    }
+
+    .character-card.villageois {
+      border-left-color: #388e3c;
+    }
+
+    .character-card.neutre {
+      border-left-color: #7b1fa2;
+    }
+
+    .character-card .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      gap: 15px;
+    }
+
+    .character-card .icon {
+      font-size: 2em;
+    }
+
+    .character-card h2 {
+      margin: 0;
+      color: #333;
+      font-size: 1.4em;
+    }
+
+    .character-card .camp {
+      font-size: 0.9em;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 12px;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .character-card.loup .camp {
+      background-color: #d32f2f;
+    }
+
+    .character-card.villageois .camp {
+      background-color: #388e3c;
+    }
+
+    .character-card.neutre .camp {
+      background-color: #7b1fa2;
+    }
+
+    .character-card .details {
+      margin-top: 15px;
+    }
+
+    .character-card .detail-item {
+      margin-bottom: 10px;
+      padding: 8px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+    }
+
+    .character-card .detail-item strong {
+      color: #555;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.9em;
+    }
+
+    .character-card .strategy {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f0f8ff;
+      border-radius: 5px;
+      border-left: 3px solid #2196f3;
+    }
+
+    .character-card .strategy h3 {
+      margin-top: 0;
+      color: #1976d2;
+      font-size: 1.1em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .characters-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .character-card {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    /* ===== MASQUAGE INITIAL POUR LA RECHERCHE ===== */
+    .character-card.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🐺 Fiches Loups-Garous de Thiercelieux</h1>
+      <p>Toutes les fiches des personnages du jeu de base et des extensions</p>
+    </header>
+
+    <!-- Barre de recherche -->
+    <div class="search-container">
+      <input type="text" id="search" placeholder="🔍 Rechercher un personnage...">
+    </div>
+
+    <!-- Filtres par camp -->
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterCharacters('all')">Tous</button>
+      <button class="filter-btn" onclick="filterCharacters('loup')">Loups-Garous</button>
+      <button class="filter-btn" onclick="filterCharacters('villageois')">Villageois</button>
+      <button class="filter-btn" onclick="filterCharacters('neutre')">Neutres</button>
+    </div>
+
+    <!-- Grille des personnages -->
+    <div class="characters-grid" id="charactersGrid">
+      <!-- Loup-Garou -->
+      <div class="character-card loup" data-camp="loup">
+        <div class="header">
+          <div class="icon">🐺</div>
+          <div>
+            <h2>Loup-Garou</h2>
+            <span class="camp">Loup-Garou</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Éliminer tous les Villageois et ne pas se faire démasquer.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Chaque nuit, les Loups-Garous se réveillent pour désigner une victime.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Les Loups-Garous se réveillent et choisissent leur victime."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Les Loups-Garous doivent mentir et manipuler les villageois pour survivre. Ils doivent éviter de se faire démasquer tout en éliminant les villageois un par un. Leur force réside dans la coordination nocturne et la dissimulation diurne. Ils doivent éviter de se faire repérer par la Petite Fille ou la Voyante, et manipuler les débats pour détourner les soupçons.</p>
+        </div>
+      </div>
+
+      <!-- Villageois -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">🏡</div>
+          <div>
+            <h2>Villageois</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Démasquer et tuer tous les Loups-Garous.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Aucun pouvoir particulier.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Jour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Les Villageois votent pour éliminer un suspect."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Les Villageois doivent faire preuve de déduction et d'observation pour identifier les Loups-Garous. Ils doivent voter stratégiquement pour éliminer les suspects les plus probables. Leur force est dans la coopération et l’analyse des comportements. Ils doivent se méfier des manipulations des Loups-Garous et utiliser les informations des personnages spéciaux comme la Voyante ou la Petite Fille.</p>
+        </div>
+      </div>
+
+      <!-- Voyante -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">🔮</div>
+          <div>
+            <h2>Voyante</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Découvrir les rôles des autres joueurs pour aider le village.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Chaque nuit, la Voyante peut découvrir l'identité d'un autre joueur.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "La Voyante se réveille et désigne un joueur à sonder."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>La Voyante doit rester discrète pour ne pas se faire repérer par les Loups-Garous. Elle doit communiquer ses informations de manière stratégique pendant la phase Jour pour aider le village. Elle doit éviter de révéler trop tôt ses découvertes pour ne pas devenir une cible prioritaire. Son rôle est crucial pour orienter les votes et démasquer les Loups-Garous.</p>
+        </div>
+      </div>
+
+      <!-- Sorcière -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">🧙‍♀️</div>
+          <div>
+            <h2>Sorcière</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Utiliser ses potions pour sauver des victimes ou éliminer des joueurs.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Possède deux potions à utiliser pendant la phase Nuit : une pour sauver une victime, l'autre pour éliminer un joueur.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "La Sorcière se réveille, je lui montre la victime des Loups-Garous. Va-t-elle user de sa potion de guérison, ou d’empoisonnement ?"
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>La Sorcière doit utiliser ses potions au moment stratégique pour renverser la partie. Elle doit choisir judicieusement quand utiliser ses potions pour maximiser leur impact. Elle peut sauver un villageois crucial ou éliminer un Loup-Garou dangereux. Elle doit éviter de gaspiller ses potions trop tôt et rester discrète pour ne pas devenir une cible.</p>
+        </div>
+      </div>
+
+      <!-- Chasseur -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">🎯</div>
+          <div>
+            <h2>Chasseur</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Éliminer un autre joueur avant de mourir.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Si le Chasseur est éliminé, il peut tirer sur un autre joueur avant de mourir.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Jour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Chasseur est éliminé et tire sur un autre joueur avant de mourir."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Chasseur doit choisir sa cible avec soin pour maximiser l'impact de son tir. Il doit également éviter de se faire éliminer trop tôt dans la partie. Son rôle est de protéger le village en éliminant un Loup-Garou ou un personnage dangereux avant de mourir. Il doit rester discret pour ne pas devenir une cible prioritaire.</p>
+        </div>
+      </div>
+
+      <!-- Petite Fille -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">👧</div>
+          <div>
+            <h2>Petite Fille</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Espionner les Loups-Garous la nuit.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            La Petite Fille peut espionner les Loups-Garous la nuit.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "La Petite Fille espionne les Loups-Garous la nuit."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>La Petite Fille doit rester discrète pour ne pas se faire repérer par les Loups-Garous. Elle doit utiliser les informations recueillies pour aider le village à démasquer les Loups-Garous. Elle doit éviter de se faire surprendre, car elle serait alors la première cible des Loups-Garous. Son rôle est crucial pour obtenir des informations sur les actions nocturnes des Loups-Garous.</p>
+        </div>
+      </div>
+
+      <!-- Cupidon -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">💘</div>
+          <div>
+            <h2>Cupidon</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Faire en sorte que les deux amoureux survivent jusqu'à la fin.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Lie deux joueurs dès la première nuit, les deux amoureux sont avertis. Si l'un meurt, l'autre aussi.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Cupidon lie deux joueurs dès la première nuit."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Cupidon doit choisir des amoureux qui peuvent travailler ensemble pour survivre. Il doit s'assurer que les amoureux ne se font pas démasquer par les autres joueurs. Son rôle est de créer une alliance secrète qui peut influencer la dynamique du jeu, en particulier si les amoureux sont des personnages clés comme la Voyante ou le Chasseur.</p>
+        </div>
+      </div>
+
+      <!-- Voleur -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">🕵️‍♂️</div>
+          <div>
+            <h2>Voleur</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Échanger son rôle contre l'un des deux non distribués en début de partie.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut échanger son rôle contre l'un des deux non distribués en début de partie.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Jour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Voleur échange son rôle contre l'un des deux non distribués en début de partie."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Voleur doit choisir judicieusement le rôle à échanger pour maximiser son impact. Il doit éviter de se faire éliminer trop tôt dans la partie. Son rôle est de s’adapter à la situation en changeant de rôle, ce qui peut déstabiliser les stratégies des autres joueurs. Il doit rester discret pour ne pas devenir une cible.</p>
+        </div>
+      </div>
+
+      <!-- Idiot du Village -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">🤪</div>
+          <div>
+            <h2>Idiot du Village</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Survivre et aider le village à démasquer les Loups-Garous.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Aucun pouvoir particulier, mais sa naïveté peut être utilisée pour manipuler les autres joueurs.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Jour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "L'Idiot du Village, malgré sa naïveté, peut être une clé pour démasquer les Loups-Garous."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>L'Idiot du Village doit utiliser sa naïveté pour gagner la confiance des autres villageois et les aider à identifier les Loups-Garous. Il doit éviter de se faire manipuler par les Loups-Garous et rester vigilant pour ne pas devenir une victime facile. Son rôle est de créer une diversion ou une source d’informations involontaires qui peuvent aider le village.</p>
+        </div>
+      </div>
+
+      <!-- Ancien -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">👴</div>
+          <div>
+            <h2>Ancien</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Utiliser sa sagesse pour guider le village et survivre.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut donner des conseils stratégiques aux autres villageois.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Jour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "L'Ancien, avec sa sagesse, peut guider le village pour démasquer les Loups-Garous."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>L'Ancien doit utiliser sa sagesse pour aider le village à prendre des décisions stratégiques. Il doit éviter de se faire éliminer trop tôt dans la partie et rester un guide fiable pour les autres villageois. Son rôle est de conseiller et d’orienter les votes pour maximiser les chances de victoire du village.</p>
+        </div>
+      </div>
+
+      <!-- Bouc Émissaire -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">🐐</div>
+          <div>
+            <h2>Bouc Émissaire</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Survivre et aider le village à démasquer les Loups-Garous.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Aucun pouvoir particulier, mais sa position de victime peut être utilisée pour manipuler les autres joueurs.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Jour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Bouc Émissaire, toujours victime, peut être une clé pour démasquer les Loups-Garous."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Bouc Émissaire doit utiliser sa position de victime pour gagner la confiance des autres villageois et les aider à identifier les Loups-Garous. Il doit éviter de se faire manipuler par les Loups-Garous et rester vigilant pour ne pas devenir une victime facile. Son rôle est de créer une diversion ou une source d’informations involontaires qui peuvent aider le village.</p>
+        </div>
+      </div>
+
+      <!-- Salvateur -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">🛡️</div>
+          <div>
+            <h2>Salvateur</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Protéger les villageois des morsures des Loups-Garous et survivre.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut protéger un villageois des morsures des Loups-Garous chaque nuit.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Salvateur se réveille et protège un villageois des morsures des Loups-Garous."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Salvateur doit utiliser son pouvoir de protection pour aider les villageois à survivre. Il doit choisir judicieusement les villageois à protéger pour maximiser leur impact et éviter de se faire éliminer trop tôt dans la partie. Son rôle est crucial pour contrer les attaques nocturnes des Loups-Garous et préserver les personnages clés du village.</p>
+        </div>
+      </div>
+
+      <!-- Joueur de Flûte -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">🎵</div>
+          <div>
+            <h2>Joueur de Flûte</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Exercer sa vengeance et survivre.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut jouer de la flûte pour manipuler les autres joueurs.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Jour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Joueur de Flûte se réveille et joue de la flûte pour manipuler les autres joueurs."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Joueur de Flûte doit utiliser sa flûte pour manipuler les autres joueurs et les aider à identifier les Loups-Garous. Il doit éviter de se faire manipuler par les Loups-Garous et rester vigilant pour ne pas devenir une victime facile. Son rôle est de créer une ambiance et d’influencer les débats pour orienter les votes contre les Loups-Garous.</p>
+        </div>
+      </div>
+
+      <!-- Abominable Sectaire -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">👹</div>
+          <div>
+            <h2>Abominable Sectaire</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Faire en sorte que le groupe dans lequel il n'est pas soit décimé.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Séparer le village en deux groupes en début de partie.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Début de partie
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "L'Abominable Sectaire sépare le village en deux groupes."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>L'Abominable Sectaire doit manipuler les autres joueurs pour atteindre son objectif. Il doit s'assurer que les autres personnages de sa secte survivent et que l'autre groupe est décimé. Son rôle est de créer une division au sein du village pour faciliter la victoire de son groupe. Il doit rester discret pour ne pas être éliminé trop tôt.</p>
+        </div>
+      </div>
+
+      <!-- Ange -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">👼</div>
+          <div>
+            <h2>Ange</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Remporter la partie s'il est éliminé au premier tour.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Gagne la partie s'il est éliminé lors de la première journée.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Premier tour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "L'Ange est éliminé et remporte la partie."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>L'Ange doit se faire éliminer dès le premier tour pour remporter la partie. Il doit éviter de se faire démasquer et manipuler les autres joueurs pour atteindre son objectif. Son rôle est de créer une dynamique de jeu où sa mort précoce est un avantage stratégique, souvent en influençant les votes ou en créant une diversion.</p>
+        </div>
+      </div>
+
+      <!-- Gitane -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">🔮</div>
+          <div>
+            <h2>Gitane</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Utiliser les cartes "spiritisme" pour poser des questions aux morts.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut choisir quelle question sera posée parmi 5 ou qu'aucune question ne soit posée.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "La Gitane utilise les cartes 'spiritisme' pour poser des questions aux morts."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>La Gitane doit utiliser ses cartes "spiritisme" pour obtenir des informations utiles. Elle doit choisir judicieusement les questions à poser pour maximiser leur impact et éviter de se faire éliminer trop tôt dans la partie. Son rôle est de fournir des indices supplémentaires au village en interrogeant les morts, ce qui peut orienter les enquêtes.</p>
+        </div>
+      </div>
+
+      <!-- Servante Dévouée -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">👗</div>
+          <div>
+            <h2>Servante Dévouée</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Prendre la carte d'un joueur éliminé avant que celle-ci ne soit révélée.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut se révéler et prendre la carte d'un joueur éliminé.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Jour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "La Servante Dévouée se révèle et prend la carte d'un joueur éliminé."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>La Servante Dévouée doit utiliser son pouvoir pour maintenir l'équilibre dans le jeu. Elle doit choisir judicieusement les cartes à prendre pour maximiser leur impact et éviter de se faire éliminer trop tôt dans la partie. Son rôle est de récupérer des informations ou des pouvoirs supplémentaires en prenant les cartes des joueurs éliminés, ce qui peut renforcer le village ou perturber les Loups-Garous.</p>
+        </div>
+      </div>
+
+      <!-- Bouffon -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">🤡</div>
+          <div>
+            <h2>Bouffon</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Jouer le pouvoir d'un villageois non joué une nuit seulement.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut jouer le pouvoir d'un villageois non joué une nuit seulement.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Bouffon joue le pouvoir d'un villageois non joué une nuit seulement."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Bouffon doit utiliser son pouvoir pour ajouter des événements spécifiques au jeu. Il doit choisir judicieusement les pouvoirs à jouer pour maximiser leur impact et éviter de se faire éliminer trop tôt dans la partie. Son rôle est de créer des surprises et des retournements de situation en utilisant des pouvoirs non utilisés, ce qui peut déstabiliser les stratégies des autres joueurs.</p>
+        </div>
+      </div>
+
+      <!-- Chevalier à l'Épée Rouillée -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">⚔️</div>
+          <div>
+            <h2>Chevalier à l'Épée Rouillée</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Tuer un loup s'il est mangé par les Loups-Garous.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Tue un loup s'il est mangé par les Loups-Garous.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Chevalier à l'Épée Rouillée tue un loup s'il est mangé par les Loups-Garous."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Chevalier à l'Épée Rouillée doit utiliser son pouvoir pour éliminer les Loups-Garous. Il doit choisir judicieusement les moments pour utiliser son pouvoir et éviter de se faire éliminer trop tôt dans la partie. Son rôle est de protéger le village en tuant un Loup-Garou s’il est attaqué, ce qui peut dissuader les Loups-Garous de l’attaquer.</p>
+        </div>
+      </div>
+
+      <!-- Chien-Loup -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">🐕</div>
+          <div>
+            <h2>Chien-Loup</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Choisir en début de partie s'il veut être un loup-garou ou un simple villageois.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut choisir d'être un simple villageois ou un loup-garou.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Début de partie
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Chien-Loup choisit d'être un simple villageois ou un loup-garou."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Chien-Loup doit choisir judicieusement son camp pour maximiser son impact. Il doit éviter de se faire éliminer trop tôt dans la partie et utiliser sa position pour manipuler les autres joueurs. Son rôle est de s’adapter à la situation en choisissant son camp, ce qui peut déstabiliser les stratégies des autres joueurs. Il doit rester discret pour ne pas devenir une cible.</p>
+        </div>
+      </div>
+
+      <!-- Enfant Sauvage -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">🧒</div>
+          <div>
+            <h2>Enfant Sauvage</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Devenir un loup-garou si la personne qu'il a désignée en début de partie comme son modèle décède.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Devient un loup-garou si son modèle meurt.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Début de partie
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "L'Enfant Sauvage devient un loup-garou si son modèle meurt."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>L'Enfant Sauvage doit choisir judicieusement son modèle pour maximiser son impact. Il doit éviter de se faire éliminer trop tôt dans la partie et utiliser sa position pour manipuler les autres joueurs. Son rôle est de créer une dynamique de jeu où sa transformation en Loup-Garou peut surprendre les villageois et renforcer les Loups-Garous.</p>
+        </div>
+      </div>
+
+      <!-- Garde Champêtre -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">🌾</div>
+          <div>
+            <h2>Garde Champêtre</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Jouer des cartes événements connues de lui seul à chaque matinée.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut jouer des cartes événements connues de lui seul.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Jour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Garde Champêtre joue des cartes événements connues de lui seul à chaque matinée."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Garde Champêtre doit utiliser ses cartes événements pour influencer le cours du jeu. Il doit choisir judicieusement les cartes à jouer pour maximiser leur impact et éviter de se faire éliminer trop tôt dans la partie. Son rôle est de créer des événements imprévus qui peuvent modifier la dynamique du jeu, souvent en perturbant les stratégies des autres joueurs.</p>
+        </div>
+      </div>
+
+      <!-- Grand Méchant Loup -->
+      <div class="character-card loup" data-camp="loup">
+        <div class="header">
+          <div class="icon">🐺🐺</div>
+          <div>
+            <h2>Grand Méchant Loup</h2>
+            <span class="camp">Loup-Garou</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Faire une seconde victime chaque nuit tant qu'aucun loup n'est mort.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut faire une seconde victime chaque nuit tant qu'aucun loup n'est mort.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Grand Méchant Loup fait une seconde victime chaque nuit tant qu'aucun loup n'est mort."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Grand Méchant Loup doit utiliser son pouvoir pour éliminer les villageois. Il doit choisir judicieusement les victimes pour maximiser son impact et éviter de se faire éliminer trop tôt dans la partie. Son rôle est d’accélérer la pression sur le village en tuant deux villageois par nuit, ce qui peut rapidement réduire le nombre de villageois et faciliter la victoire des Loups-Garous.</p>
+        </div>
+      </div>
+
+      <!-- Juge Bègue -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">⚖️</div>
+          <div>
+            <h2>Juge Bègue</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Permettre de voter deux fois en une journée.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut voter deux fois en une journée.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Jour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Juge Bègue permet de voter deux fois en une journée."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Juge Bègue doit utiliser son pouvoir pour influencer les votes. Il doit choisir judicieusement les moments pour voter deux fois et éviter de se faire éliminer trop tôt dans la partie. Son rôle est de créer une dynamique de vote plus complexe, ce qui peut influencer les décisions du village et déstabiliser les stratégies des Loups-Garous.</p>
+        </div>
+      </div>
+
+      <!-- Loup Blanc -->
+      <div class="character-card loup" data-camp="loup">
+        <div class="header">
+          <div class="icon">🐺❄️</div>
+          <div>
+            <h2>Loup Blanc</h2>
+            <span class="camp">Loup-Garou</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Désigner seul la victime une nuit sur deux.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Désigne seul la victime une nuit sur deux.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Loup Blanc désigne seul la victime une nuit sur deux."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Loup Blanc doit utiliser son pouvoir pour éliminer les villageois. Il doit choisir judicieusement les victimes pour maximiser son impact et éviter de se faire éliminer trop tôt dans la partie. Son rôle est de créer une dynamique de jeu où il peut agir seul, ce qui peut surprendre les villageois et renforcer les Loups-Garous.</p>
+        </div>
+      </div>
+
+      <!-- Montreur d'Ours -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">🐻</div>
+          <div>
+            <h2>Montreur d'Ours</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Obliger le meneur à grogner à chaque tour où il est assis à côté d'un loup.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Oblige le meneur à grogner à chaque tour où il est assis à côté d'un loup.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Jour
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Montreur d'Ours oblige le meneur à grogner à chaque tour où il est assis à côté d'un loup."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Montreur d'Ours doit utiliser son pouvoir pour démasquer les Loups-Garous. Il doit choisir judicieusement les moments pour utiliser son pouvoir et éviter de se faire éliminer trop tôt dans la partie. Son rôle est de fournir des indices auditifs au village pour aider à identifier les Loups-Garous, ce qui peut orienter les votes et les stratégies.</p>
+        </div>
+      </div>
+
+      <!-- Renard -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">🦊</div>
+          <div>
+            <h2>Renard</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Utiliser son flair pour désigner un joueur et savoir s'il s'agit d'un loup-garou.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut désigner un joueur et savoir s'il s'agit d'un loup-garou.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Renard utilise son flair pour désigner un joueur et savoir s'il s'agit d'un loup-garou."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Renard doit utiliser son flair pour démasquer les Loups-Garous. Il doit choisir judicieusement les joueurs à désigner pour maximiser son impact et éviter de se faire éliminer trop tôt dans la partie. Son rôle est de fournir des informations précises au village sur l’identité des Loups-Garous, ce qui peut orienter les votes et les stratégies.</p>
+        </div>
+      </div>
+
+      <!-- Villageois-Villageois -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">🏡🏡</div>
+          <div>
+            <h2>Villageois-Villageois</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Représenter un villageois sur ses deux faces.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Carte recto-verso représentant un villageois sur ses deux faces.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Début de partie
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Villageois-Villageois représente un villageois sur ses deux faces."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Villageois-Villageois doit utiliser sa position pour aider le village à démasquer les Loups-Garous. Il doit éviter de se faire éliminer trop tôt dans la partie et utiliser sa position pour manipuler les autres joueurs. Son rôle est de créer une dynamique de jeu où sa double identité peut surprendre les Loups-Garous et renforcer le village.</p>
+        </div>
+      </div>
+
+      <!-- Deux Sœurs -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">👯‍♀️</div>
+          <div>
+            <h2>Deux Sœurs</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Se connaître mutuellement et se faire confiance.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Se connaissent mutuellement et peuvent se faire confiance.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Début de partie
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Les Deux Sœurs se connaissent mutuellement et peuvent se faire confiance."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Les Deux Sœurs doivent utiliser leur connaissance mutuelle pour aider le village à démasquer les Loups-Garous. Elles doivent éviter de se faire éliminer trop tôt dans la partie et utiliser leur position pour manipuler les autres joueurs. Leur rôle est de créer une alliance secrète au sein du village pour renforcer la coopération et la stratégie collective.</p>
+        </div>
+      </div>
+
+      <!-- Trois Frères -->
+      <div class="character-card villageois" data-camp="villageois">
+        <div class="header">
+          <div class="icon">👨‍👨‍👦</div>
+          <div>
+            <h2>Trois Frères</h2>
+            <span class="camp">Villageois</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Se connaître mutuellement et se faire confiance.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Se connaissent mutuellement et peuvent se faire confiance.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Début de partie
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Les Trois Frères se connaissent mutuellement et peuvent se faire confiance."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Les Trois Frères doivent utiliser leur connaissance mutuelle pour aider le village à démasquer les Loups-Garous. Ils doivent éviter de se faire éliminer trop tôt dans la partie et utiliser leur position pour manipuler les autres joueurs. Leur rôle est de créer une alliance secrète au sein du village pour renforcer la coopération et la stratégie collective, similaire aux Deux Sœurs mais avec un groupe plus large.</p>
+        </div>
+      </div>
+
+      <!-- Infect Père des Loups -->
+      <div class="character-card loup" data-camp="loup">
+        <div class="header">
+          <div class="icon">🦠</div>
+          <div>
+            <h2>Infect Père des Loups</h2>
+            <span class="camp">Loup-Garou</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Infecter un villageois pour qu'il devienne un loup-garou.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut infecter un villageois pour qu'il devienne un loup-garou.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "L'Infect Père des Loups infecte un villageois pour qu'il devienne un loup-garou."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>L'Infect Père des Loups doit utiliser son pouvoir pour augmenter le nombre de Loups-Garous. Il doit choisir judicieusement les villageois à infecter pour maximiser son impact et éviter de se faire éliminer trop tôt dans la partie. Son rôle est de renforcer le camp des Loups-Garous en augmentant leur nombre, ce qui peut rapidement inverser la dynamique du jeu en faveur des Loups-Garous.</p>
+        </div>
+      </div>
+
+      <!-- Comédien -->
+      <div class="character-card neutre" data-camp="neutre">
+        <div class="header">
+          <div class="icon">🎭</div>
+          <div>
+            <h2>Comédien</h2>
+            <span class="camp">Neutre</span>
+          </div>
+        </div>
+        <div class="details">
+          <div class="detail-item">
+            <strong>Objectif principal</strong>
+            Utiliser le pouvoir de chaque villageois « spécial » une fois par partie.
+          </div>
+          <div class="detail-item">
+            <strong>Pouvoir</strong>
+            Peut utiliser le pouvoir de chaque villageois « spécial » une fois par partie.
+          </div>
+          <div class="detail-item">
+            <strong>Moment d'utilisation</strong>
+            Nuit
+          </div>
+          <div class="detail-item">
+            <strong>Phrase type</strong>
+            "Le Comédien utilise le pouvoir de chaque villageois « spécial » une fois par partie."
+          </div>
+        </div>
+        <div class="strategy">
+          <h3>💡 Stratégie de base</h3>
+          <p>Le Comédien doit utiliser son pouvoir pour manipuler les autres joueurs. Il doit choisir judicieusement les pouvoirs à utiliser pour maximiser leur impact et éviter de se faire éliminer trop tôt dans la partie. Son rôle est de créer des surprises et des retournements de situation en utilisant des pouvoirs non utilisés, ce qui peut déstabiliser les stratégies des autres joueurs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script pour la recherche et les filtres -->
+  <script>
+    // Fonction pour filtrer les personnages par camp
+    function filterCharacters(camp) {
+      const cards = document.querySelectorAll('.character-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      // Mettre à jour les boutons actifs
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Afficher/masquer les cartes
+      cards.forEach(card => {
+        if (camp === 'all' || card.dataset.camp === camp) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Fonction pour la recherche
+    document.getElementById('search').addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      const cards = document.querySelectorAll('.character-card');
+
+      cards.forEach(card => {
+        const name = card.querySelector('h2').textContent.toLowerCase();
+        if (name.includes(searchTerm)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
