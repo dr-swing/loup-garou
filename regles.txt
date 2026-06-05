@@ -1,0 +1,394 @@
+Le Pacte des Loups-Garous de Thiercelieux
+Un jeu de Philippe des Pallières et Hervé Marly
+
+Introduction
+Pour célébrer la fondation du village par le professeur Philippe et le sieur Hervé, tous les habitants les ont invités à un festin. La Grand-Place, avec ses bâtiments fraîchement repeints, brille de mille feux. Tous les villageois s’y sont réunis pour partager ce moment historique.
+Profitant de cet événement, un Pacte est scellé entre tous pour assurer la survie du village. Mais cette noble intention résistera-t-elle aux instincts maléfiques de certains ?
+Il semble que ce soit compromis… En effet, parmi les invités, se cachent les pires personnages ayant jamais vécu à Thiercelieux, prêts à briser cette fragile espérance !
+Heureusement, pour lutter contre ces forces du mal, d’autres personnages puissants ont décidé d’utiliser leurs pouvoirs pour des causes plus nobles…
+Que réserve l’avenir à Thiercelieux ?
+
+Historique des extensions
+Voici un aperçu chronologique des extensions du jeu, par le professeur Philippe et le sieur Hervé, basées sur leurs recherches :
+
+
+2001 : Jeu de base – Les Loups-Garous de Thiercelieux
+Dans l’Est sauvage, le petit hameau de Thiercelieux est devenu la proie des Loups-Garous. Les Villageois doivent s’unir pour éradiquer cette menace avant qu’il ne soit trop tard.
+Contenu : 24 cartes personnages.
+
+
+2006 : Extension #1 – Nouvelle Lune
+Des messagers secrets risquent leur vie pour informer le village de l’évolution de la menace. Mais la résistance s’organise, et de nouveaux personnages rejoignent la lutte contre les Loups-Garous !
+Contenu : 36 cartes événements, 9 variantes, 5 nouveaux personnages.
+
+
+2009 : Extension #2 – Le Village
+Le village de Thiercelieux, autrefois en ruines, est désormais repeuplé par des volontaires venus de tout le pays. Mais des rumeurs inquiétantes persistent : des Loups-Garous auraient infiltré la communauté…
+Contenu : 29 cartes personnages (dont 3 nouveaux), 29 jetons "rôles visibles", 14 silhouettes de bâtiments.
+
+
+2012 : Extension #3 – Les Personnages
+Après des cycles lunaires de paix, un jeune sauvage hurle chaque nuit dans la forêt, et des monstres lycanthropes laissent des traces de leurs méfaits. Les villageois font appel à des personnages très puissants pour lutter contre cette menace.
+Contenu : 24 cartes personnages, 17 nouveaux personnages.
+
+
+2014 : Compilation – Le Pacte
+"Un pacte pour assurer la survie du village a été conclu entre tous."
+Un objectif noble… mais qui résistera-t-il aux instincts maléfiques de certains ?
+Contenu :
+
+47 cartes personnages
+29 jetons "rôles visibles"
+14 silhouettes de bâtiments
+36 cartes événements
+9 variantes
+
+
+Contenu du Pacte
+
+47 cartes "personnages"
+36 cartes "événements"
+29 jetons "rôles visibles"
+14 silhouettes de bâtiments
+3 tuiles (dont 2 pour les variants)
+
+Principe général du jeu
+Sous la direction d’un Meneur de Jeu (qui ne joue pas), la partie alterne entre nuits et jours :
+
+La nuit : Tous les joueurs ferment les yeux. Le Meneur appelle tour à tour les personnages nocturnes pour qu’ils utilisent leurs pouvoirs.
+Le jour : Le village se réveille. Les victimes éventuelles des personnages nocturnes sont révélées. Les joueurs débattent, puis votent pour éliminer un suspect.
+But du jeu : Chaque joueur a un objectif secret selon son identité (Loup-Garou, Villageois, Solitaire, etc.).
+
+Préparation de la partie
+
+Choisir un Meneur de Jeu (idéalement quelqu’un qui connaît bien les règles ou qui sait gérer un groupe).
+Le Meneur prépare les cartes personnages et les bâtiments (si utilisés).
+Il distribue 1 carte personnage (face cachée) et éventuellement 1 jeton bâtiment à chaque joueur.
+Chaque joueur regarde discrètement sa carte, puis la replace face cachée devant lui ou dans l’emplacement prévu de son bâtiment.
+La partie peut commencer !
+
+Déroulement d’une partie
+A. La nuit
+
+Le Meneur dit : "C’est la nuit, tout le village s’endort, fermez les yeux."
+Tous les joueurs baissent la tête et ferment les yeux.
+Le Meneur appelle tour à tour les personnages nocturnes (selon l’ordre de la table de rappel, p. 24).
+Chaque personnage utilise son pouvoir (ex. : les Loups-Garous désignent une victime, la Voyante regarde une carte, etc.).
+B. Le réveil du village
+
+
+Le Meneur dit : "C’est le matin, le village se réveille, ouvrez les yeux."
+
+
+Il révèle les victimes éventuelles des personnages nocturnes.
+
+
+Débat : Les joueurs discutent, accusent, défendent, mentent ou disent la vérité… tout est permis (sauf révéler sa carte) !
+
+
+Vote : Chaque joueur désigne (du doigt) le joueur qu’il souhaite éliminer. Le joueur avec le plus de voix est éliminé et révèle sa carte.
+
+Note : Le vote du Shérif compte double.
+Note : Si le Bouclier (Défenseur) a protégé un joueur, celui-ci ne peut pas être éliminé par les Loups-Garous cette nuit-là.
+
+
+Élimination : Le joueur éliminé ne peut plus participer aux débats ni voter.
+
+
+C. Répétition
+On recommence à l’étape A jusqu’à ce qu’un camp remplisse sa condition de victoire.
+
+Les différents types de personnages
+Chaque joueur reçoit une carte personnage qui détermine son identité secrète et son objectif. Certains ont aussi un pouvoir spécial.
+
+🐺 Les Loups-Garous (p. 8)
+Objectif : Éliminer tous les autres habitants du village.
+Personnages :
+
+Loup-Garou simple : Chaque nuit, il dévorent un Villageois (mais jamais un autre Loup-Garou).
+Grand Méchant Loup : Il dévorent deux victimes par nuit (tant qu’aucun Loup-Garou, Enfant Sauvage ou Chien-Loup n’a été éliminé).
+Loup-Garou Maudit (Père des Loups) : Une fois par partie, il peut infecter sa victime au lieu de la dévorer. Celle-ci devient un Loup-Garou la nuit suivante.
+
+🏡 Les Villageois (p. 9-12)
+Objectif : Éliminer tous les Loups-Garous.
+Personnages :
+
+Villageois simple : Aucun pouvoir, mais peut analyser les comportements pour démasquer les Loups-Garous.
+Double Villageois : Sa carte a un Villageois simple des deux côtés. Le village sait donc qu’il est innocent.
+Voyante (appelée la nuit) : Chaque nuit, elle peut regarder la carte d’un joueur de son choix.
+Cupidon (appelé la 1ère nuit) : Il forme deux amants (qui peuvent inclure lui-même). Si l’un meurt, l’autre se suicide. Les amants ne peuvent pas voter l’un contre l’autre.
+Sorcière (appelée la nuit) : Elle a 2 potions :
+
+Potion de vie : Sauve un joueur dévoré par les Loups-Garous (une seule fois).
+Potion de mort : Tue un joueur de son choix (une seule fois).
+Elle peut utiliser les deux potions la même nuit.
+
+Chasseur : S’il est dévoré ou lynché, il peut tuer un joueur de son choix avant de mourir.
+Petite Fille : Elle peut espionner les Loups-Garous la nuit. Si un Loup-Garou la voit, il peut la dévorer à sa place.
+Défenseur (appelé la nuit) : Chaque nuit, il protège un joueur (y compris lui-même) des Loups-Garous. Ne peut pas protéger deux fois le même joueur de suite.
+Ancien : Les Loups-Garous doivent le dévorer deux fois pour l’éliminer. S’il est sauvé par la Sorcière, il ne récupère qu’une vie.
+Si les Villageois l’éliminent par vote, ils perdent tous leurs pouvoirs jusqu’à la fin de la partie.
+Bouclier (Bouclier du Village) : Si le vote du village aboutit à une égalité, c’est lui qui est éliminé. Il peut alors choisir qui pourra voter le lendemain.
+Idiot du Village : Si le village vote contre lui, il révèle sa carte et est épargné (mais ne peut plus voter). S’il est dévoré par les Loups-Garous, il est éliminé.
+Deux Sœurs (appelées la 1ère nuit) : Elles se reconnaissent et peuvent coordonner leurs actions (en silence) pendant la partie.
+Trois Frères (appelés la 1ère nuit) : Même principe que les Deux Sœurs, mais pour 3 joueurs.
+Renard (appelé la nuit) : Chaque nuit, il choisit 3 joueurs voisins (dont un central). Si au moins un Loup-Garou est dans ce groupe, il peut réutiliser son pouvoir. Sinon, il le perd définitivement.
+Domptrice d’Ours : Chaque matin, si un Loup-Garou est à côté d’elle, son ours grogne (le Meneur fait un bruit de grognement). Les joueurs éliminés ne comptent pas.
+Juge Bègue : Une fois par partie, il peut organiser deux votes consécutifs (sans débat entre les deux).
+Chevalier à l’Épée Rouillée : S’il est dévoré, un Loup-Garou est contaminé par son épée rouillée et meurt la nuit suivante.
+
+🎭 Les Ambivalents (p. 13-14)
+Objectif : Faire gagner le camp auquel ils appartiennent (peut changer pendant la partie).
+Personnages :
+
+Voleur (appelé la 1ère nuit) : Il peut échanger sa carte avec l’une des 2 cartes non distribuées (qui sont des Villageois simples, sauf si les 2 sont des Loups-Garous).
+Servante Dévouée : Avant que la carte du joueur lynché ne soit révélée, elle peut prendre son identité et jouer avec sa nouvelle carte jusqu’à la fin de la partie.
+Si elle est amoureuse, elle ne peut pas utiliser son pouvoir.
+Acteur (appelé la nuit) : Avant la partie, le Meneur choisit 3 cartes personnages (avec pouvoirs) et les place face visible au centre. Chaque nuit, l’Acteur peut utiliser le pouvoir de l’une de ces cartes (qui est ensuite retirée).
+Enfant Sauvage (appelé la 1ère nuit) : Il choisit un modèle (un joueur). Tant que ce modèle est en vie, il reste un Villageois. Si son modèle meurt, il devient un Loup-Garou.
+Chien-Loup (appelé la 1ère nuit) : Il choisit d’être un Villageois simple ou un Loup-Garou pour toute la partie.
+
+👑 Les Solitaires (p. 15)
+Objectif : Atteindre leur objectif personnel, quel que soit le camp.
+Personnages :
+
+Loup-Garou Blanc (appelé la nuit) :
+
+Dévore avec les Loups-Garous chaque nuit.
+Tue un Loup-Garou une nuit sur deux.
+Objectif : Être le seul survivant du village.
+
+Ange :
+
+Si le village le lynche ou le dévorent lors du premier tour, il gagne la partie et la partie s’arrête.
+Sinon, il devient un Villageois simple pour le reste de la partie.
+
+Joueur de Flûte (appelé la nuit) :
+
+Chaque nuit, il enchante 2 nouveaux joueurs.
+S’il n’y a plus que des joueurs enchantés, il gagne la partie.
+Les joueurs enchantés gardent leurs pouvoirs.
+
+Manipulateur Préjugé :
+
+Avant la partie, le Meneur divise le village en 2 groupes (ex. : hommes/femmes, lunettes/pas lunettes).
+Objectif : Éliminer tous les joueurs de l’autre groupe.
+
+
+🏰 Les Personnages avec Bâtiments (p. 16-18)
+Certains habitants occupent un bâtiment qui leur donne un pouvoir supplémentaire (permanent ou unique).
+But : Même objectif que leur identité secrète, mais avec un pouvoir accru.
+Bâtiments et jetons "rôles visibles" :
+
+15 jetons Vagabonds
+6 jetons Vaches (pour les Fermiers)
+1 jeton Confesseur (avec son rosaire)
+1 jeton Reboiseur (avec son mortier)
+1 jeton Bailli (avec ses clés)
+1 jeton Boulanger (avec son pain)
+1 jeton Maîtresse d’École (avec sa cloche)
+1 jeton Barbier (avec son rasoir)
+1 jeton Cabaretier (avec son verre)
+1 jeton Seigneur (avec son blason)
+14 silhouettes de bâtiments (Fermes, Église, Hôtel, etc.)
+
+Pouvoirs des bâtiments :
+
+Fermes (Fermiers) :
+
+À partir du 2ème tour, les Fermiers élisent un Shérif parmi eux.
+Si le dernier Fermier meurt, il n’y a plus de Shérif.
+
+Église (Confesseur) :
+
+Pouvoir unique : À tout moment, il peut demander à un joueur de lui montrer sa carte (en secret).
+
+Hôtel-Dieu (Reboiseur) :
+
+Pouvoir unique : Il peut redonner un pouvoir unique à un joueur qui l’a déjà utilisé.
+
+École (Maîtresse d’École) :
+
+Chaque jour, avant le vote, elle peut interdire à 2 joueurs de voter.
+
+Boulangerie (Boulanger) :
+
+Chaque nuit, après que les Loups-Garous se soient endormis, il ouvre les yeux pendant quelques secondes.
+
+Barbier (Barbier) :
+
+Pouvoir unique : Il peut éliminer un joueur de son choix pendant la journée.
+
+S’il tue un Loup-Garou, il survit. Sinon, il meurt.
+
+
+Cabaret (Cabaretier) :
+
+Immunité : Les Loups-Garous ne peuvent pas le dévorer, et les Villageois ne peuvent pas voter contre lui.
+
+Sauf s’il vote pour un joueur qui est ensuite éliminé (même sauvé), il perd son immunité.
+
+
+Mairie (Bailli) :
+
+Quand un bâtiment est libéré (son occupant meurt), il peut attribuer ce bâtiment à un Vagabond.
+
+Manoir (Seigneur) :
+
+Pouvoir unique : Après un vote, il peut graciier le condamné (s’il est demandé par la victime).
+
+
+🎪 Personnages spécifiques à Nouvelle Lune (p. 23)
+(Nécessitent les cartes Événements de Nouvelle Lune)
+
+Bohémienne (appelée la nuit) :
+
+Chaque nuit, elle peut poser une question à un joueur éliminé (via une carte Spiritisme).
+Le mort répond par "Ouiiiii" ou "Nooooon".
+
+Crieur Public :
+
+Nommé par le Shérif, il reçoit des cartes Événements et peut en annoncer une chaque matin.
+Si le Crieur Public devient Shérif, il doit nommer un nouveau Crieur.
+
+
+Ordre d’appel des personnages
+(À adapter selon les personnages en jeu)
+1ère nuit :
+
+Voleur
+Acteur
+Cupidon
+Voyante
+Renard
+Amants
+Juge Bègue (signe)
+Deux Sœurs
+Trois Frères
+Enfant Sauvage
+Domptrice d’Ours
+Scandaleur
+Pyromane
+Défenseur
+Tous les Loups-Garous (y compris Chien-Loup s’il a choisi d’être un Loup-Garou, Loup-Garou Blanc, Père des Loups, Grand Méchant Loup)
+Petite Fille (peut espionner)
+Boulanger (ouvre et ferme les yeux)
+Père des Loups
+Grand Méchant Loup
+Sorcière
+Bohémienne (peut choisir un médium)
+Joueur de Flûte
+Joueurs enchantés
+
+Chaque nuit :
+
+Acteur
+Voyante
+Renard
+Scandaleur
+Pyromane
+Défenseur
+Tous les Loups-Garous (y compris Chien-Loup s’il a choisi d’être un Loup-Garou, Enfant Sauvage si son modèle est mort, joueur infecté par le Père des Loups)
+Petite Fille (peut espionner)
+Boulanger (ouvre et ferme les yeux)
+Loup-Garou Blanc (une nuit sur deux)
+Père des Loups
+Grand Méchant Loup (tant qu’aucun Loup-Garou n’a été éliminé)
+Sorcière
+Bohémienne (peut choisir un médium)
+Joueur de Flûte
+Joueurs enchantés
+
+Chaque jour :
+
+Révéler les victimes.
+Grognement de l’ours (Domptrice).
+Médium (choisi par la Bohémienne).
+Crieur Public.
+Débat.
+Vote et appel à la Servante Dévouée.
+L’Ange gagne (uniquement s’il est éliminé au 1er vote).
+Deuxième vote possible (si le Juge Bègue le décide) et appel à la Servante Dévouée.
+
+Variantes (p. 25-28)
+
+Clair de Lune : Jouez dehors la nuit, avec des bougies. Éteignez-les pour marquer les éliminations.
+Communauté des Hameaux : Plusieurs villages jouent en parallèle, avec des échanges de joueurs possibles.
+"De toute façon, ce n’est sûrement pas lui !" : Nouvelle méthode de vote où les joueurs se lèvent et désignent un innocent.
+Écrit sur le mur : Avant la nuit, chaque joueur écrit une phrase anonyme (accusation, compliment, etc.) que le Meneur lit à voix haute.
+Double Je :
+
+Chaque joueur reçoit 2 cartes (une face visible = rôle, une face cachée = alignement : Loup-Garou ou Villageois).
+
+Fête des Moissons :
+
+Plus de Loups-Garous que d’habitude.
+Tous les pouvoirs sont perturbés (ex. : la Voyante voit 3 cartes au lieu d’une, le Chasseur ne peut tirer que sur un voisin, etc.).
+
+Peste Noire (à lire avec un miroir !)
+Transe Lycanthropique : Les Loups-Garous ne tuent pas, mais enchantent leurs victimes (qui perdent leurs pouvoirs).
+Nouvelle Lune : Utilisez les 36 cartes Événements pour des parties imprévisibles.
+
+Conseils pour le Meneur
+
+Préparez à l’avance les cartes et les bâtiments.
+Utilisez un aide (ex. : le premier joueur éliminé) pour gérer les appels des personnages.
+Soyez clair dans les annonces (ex. : "Les Loups-Garous, ouvrez les yeux").
+Adaptez les règles pour simplifier ou complexifier la partie selon l’expérience des joueurs.
+Encouragez le bluff et la discussion : C’est l’essence du jeu !
+
+Conditions de victoire
+
+
+  
+    
+      Camp
+      Condition de victoire
+    
+  
+  
+    
+      Loup-Garous
+      Éliminer tous les Villageois (et autres non-Loups-Garous).
+    
+    
+      Villageois
+      Éliminer tous les Loups-Garous.
+    
+    
+      Amants
+      Être les seuls survivants (même si l’un est un Loup-Garou).
+    
+    
+      Solitaire
+      Atteindre leur objectif personnel (ex. : Loup-Garou Blanc = seul survivant).
+    
+    
+      Ange
+      Être lynché ou dévoré dès le premier tour.
+    
+    
+      Joueur de Flûte
+      Enchanter tous les joueurs.
+    
+    
+      Manipulateur
+      Éliminer tous les joueurs de l’autre groupe.
+    
+  
+
+
+
+
+Remerciements et crédits
+
+Auteurs : Philippe des Pallières et Hervé Marly.
+Illustrations :
+
+Jeu de base et Nouvelle Lune : Alexios Tjoyas
+Le Village : Stéphane Poinsot
+Le Pacte : Misda & Christine Deschamps
+
+Traduction anglaise : Eric Harlaus et Eric Franklin.
+Site officiel : www.loups-garous.com
+Contact : infos@lui-meme.net
