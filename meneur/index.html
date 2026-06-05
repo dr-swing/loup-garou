@@ -22,18 +22,149 @@
     </header>
 
     <main>
-      <div class="card">
-        <h2>Fonctions du Meneur</h2>
-        <ul>
-          <li>Gérer l'ordre des tours et appeler les rôles la nuit.</li>
-          <li>Faire respecter les règles et animer les débats.</li>
-          <li>Gérer les actions spéciales (poterie, révélations, etc.).</li>
-        </ul>
+      <div class="card" style="margin-bottom:16px;">
+        <h2>Sélection des rôles</h2>
+        <p>Cochez les rôles présents dans votre partie puis générez l'ordre des appels.</p>
 
-        <h3>Conseils pratiques</h3>
-        <p>Préparez les fiches, gardez le rythme, adaptez les explications selon les joueurs, et soyez clair sur les pouvoirs.</p>
+        <div id="rolesList" style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px;">
+          <!-- Cases à cocher générées par JS -->
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+          <button id="generateFirstNight">Générer — Première Nuit</button>
+          <button id="generateNight">Générer — Nuit type</button>
+          <button id="generateDay">Générer — Jour</button>
+          <button id="generateLoop">Générer — Boucle complète</button>
+          <button id="selectAll">Tout cocher</button>
+          <button id="clearAll">Tout décocher</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Ordre généré</h2>
+        <div id="output" style="margin-top:12px;white-space:pre-wrap"></div>
       </div>
     </main>
   </div>
+
+  <script>
+    // Liste des rôles (tirée des règles fournies)
+    const ALL_ROLES = [
+      'Voleur','Comédien','Cupidon','Voyante','Renard','Amoureux','Juge Bègue','Deux Sœurs',
+      'Trois Frères','Enfant Sauvage','Montreur d’Ours','Corbeau','Pyromane','Salvateur',
+      // Loups — on traitera comme groupe à développer
+      'Loup-Garou','Chien-Loup','Loup-Garou Blanc','Père des Loups','Grand Méchant Loup',
+      'Petite Fille','Boulanger','Sorcière','Bohémienne','Joueur de Flûte','Joueurs charmés',
+      'Servante Dévouée','Garde Champêtre','Défenseur'
+    ];
+
+    // Ordres selon les phases (utiliser le placeholder 'LOUPS' pour la partie loups)
+    const FIRST_NIGHT_ORDER = [
+      'Voleur','Comédien','Cupidon','Voyante','Renard','Amoureux','Juge Bègue','Deux Sœurs',
+      'Trois Frères','Enfant Sauvage','Montreur d’Ours','Corbeau','Pyromane','Salvateur',
+      'LOUPS','Petite Fille','Boulanger','Infect Père des Loups','Grand Méchant Loup','Sorcière','Bohémienne','Joueur de Flûte','Joueurs charmés'
+    ];
+
+    const NIGHT_ORDER = [
+      'Comédien','Voyante','Renard','Deux Sœurs','Trois Frères','Corbeau','Pyromane','Salvateur','LOUPS',
+      'Petite Fille','Boulanger','Infect Père des Loups','Grand Méchant Loup','Loup-Garou Blanc','Sorcière','Bohémienne','Joueur de Flûte','Joueurs charmés'
+    ];
+
+    const DAY_ORDER = [
+      'Révélation des victimes','Grognement de l\'Ours','Spirite','Garde Champêtre','Débat','Vote','Ange vainqueur','Second vote'
+    ];
+
+    // Mapping pour traiter certains alias
+    function expandRolePlaceholder(role, selectedSet) {
+      if (role === 'LOUPS') {
+        // inclure tous les rôles loups choisis
+        return Array.from(selectedSet).filter(r => ['Loup-Garou','Chien-Loup','Loup-Garou Blanc','Père des Loups','Grand Méchant Loup'].includes(r));
+      }
+      if (role === 'Infect Père des Loups') return selectedSet.has('Père des Loups') ? ['Père des Loups'] : [];
+      return selectedSet.has(role) ? [role] : [];
+    }
+
+    // Générer la liste ordonnée selon un ordre donné
+    function generateOrderedList(orderArray, selectedRoles) {
+      const selectedSet = new Set(selectedRoles);
+      const result = [];
+      orderArray.forEach(item => {
+        if (item === 'LOUPS') {
+          const expanded = expandRolePlaceholder('LOUPS', selectedSet);
+          expanded.forEach(r => result.push(r));
+        } else if (item === 'Juge Bègue') {
+          if (selectedSet.has('Juge Bègue')) result.push('Juge Bègue (signe / second vote)');
+        } else if (item === 'Révélation des victimes' || item === 'Débat' || item === 'Vote' || item === 'Second vote') {
+          if (selectedSet.size > 0) {
+            // éléments de jour toujours pertinents si on a au moins un rôle
+            result.push(item);
+          }
+        } else if (item === 'Infect Père des Loups') {
+          if (selectedSet.has('Père des Loups')) result.push('Père des Loups (Infect)');
+        } else {
+          if (selectedSet.has(item)) result.push(item);
+        }
+      });
+
+      // ajouter les rôles sélectionnés non présents dans l'ordre (en fin)
+      Array.from(selectedSet).forEach(r => { if (!result.includes(r)) result.push(r); });
+      return result;
+    }
+
+    // UI génération
+    const rolesContainer = document.getElementById('rolesList');
+    ALL_ROLES.forEach(r => {
+      const id = 'role_' + r.replace(/[^a-z0-9]/gi,'_');
+      const wrapper = document.createElement('label');
+      wrapper.style.display = 'flex';
+      wrapper.style.alignItems = 'center';
+      wrapper.style.gap = '8px';
+      wrapper.innerHTML = `<input type="checkbox" id="${id}" value="${r}"> ${r}`;
+      rolesContainer.appendChild(wrapper);
+    });
+
+    function getSelectedRoles() {
+      return Array.from(document.querySelectorAll('#rolesList input:checked')).map(i => i.value);
+    }
+
+    function renderOutput(lines) {
+      const out = document.getElementById('output');
+      if (!lines || lines.length === 0) {
+        out.textContent = 'Aucun rôle sélectionné.';
+        return;
+      }
+      out.textContent = lines.map((l,i) => `${i+1}. ${l}`).join('\n');
+    }
+
+    document.getElementById('generateFirstNight').addEventListener('click', () => {
+      const sel = getSelectedRoles();
+      renderOutput(generateOrderedList(FIRST_NIGHT_ORDER, sel));
+    });
+
+    document.getElementById('generateNight').addEventListener('click', () => {
+      const sel = getSelectedRoles();
+      renderOutput(generateOrderedList(NIGHT_ORDER, sel));
+    });
+
+    document.getElementById('generateDay').addEventListener('click', () => {
+      const sel = getSelectedRoles();
+      renderOutput(generateOrderedList(DAY_ORDER, sel));
+    });
+
+    document.getElementById('generateLoop').addEventListener('click', () => {
+      const sel = getSelectedRoles();
+      const first = generateOrderedList(FIRST_NIGHT_ORDER, sel);
+      const day = generateOrderedList(DAY_ORDER, sel);
+      const night = generateOrderedList(NIGHT_ORDER, sel);
+      renderOutput(['-- Première Nuit --', ...first, '', '-- Jour --', ...day, '', '-- Nuit (type) --', ...night]);
+    });
+
+    document.getElementById('selectAll').addEventListener('click', () => {
+      document.querySelectorAll('#rolesList input').forEach(i => i.checked = true);
+    });
+    document.getElementById('clearAll').addEventListener('click', () => {
+      document.querySelectorAll('#rolesList input').forEach(i => i.checked = false);
+    });
+  </script>
 </body>
 </html>

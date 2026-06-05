@@ -144,7 +144,7 @@ Personnages :
 Voleur (appelé la 1ère nuit) : Il peut échanger sa carte avec l’une des 2 cartes non distribuées (qui sont des Villageois simples, sauf si les 2 sont des Loups-Garous).
 Servante Dévouée : Avant que la carte du joueur lynché ne soit révélée, elle peut prendre son identité et jouer avec sa nouvelle carte jusqu’à la fin de la partie.
 Si elle est amoureuse, elle ne peut pas utiliser son pouvoir.
-Acteur (appelé la nuit) : Avant la partie, le Meneur choisit 3 cartes personnages (avec pouvoirs) et les place face visible au centre. Chaque nuit, l’Acteur peut utiliser le pouvoir de l’une de ces cartes (qui est ensuite retirée).
+Commédien (appelé la nuit) : Avant la partie, le Meneur choisit 3 cartes personnages (avec pouvoirs) et les place face visible au centre. Chaque nuit, l’Commédien peut utiliser le pouvoir de l’une de ces cartes (qui est ensuite retirée).
 Enfant Sauvage (appelé la 1ère nuit) : Il choisit un modèle (un joueur). Tant que ce modèle est en vie, il reste un Villageois. Si son modèle meurt, il devient un Loup-Garou.
 Chien-Loup (appelé la 1ère nuit) : Il choisit d’être un Villageois simple ou un Loup-Garou pour toute la partie.
 
@@ -257,7 +257,7 @@ Ordre d’appel des personnages
 1ère nuit :
 
 Voleur
-Acteur
+Commédien
 Cupidon
 Voyante
 Renard
@@ -282,7 +282,7 @@ Joueurs enchantés
 
 Chaque nuit :
 
-Acteur
+Commédien
 Voyante
 Renard
 Scandaleur
