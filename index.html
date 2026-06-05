@@ -103,8 +103,10 @@
     /* ===== CARTES DES PERSONNAGES ===== */
     .characters-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      grid-template-columns: 1fr;
       gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     .character-card {
@@ -261,7 +263,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Éliminer tous les Villageois et ne pas se faire démasquer.
           </div>
           <div class="detail-item">
@@ -269,12 +271,8 @@
             Chaque nuit, les Loups-Garous se réveillent pour désigner une victime.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
-            Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Les Loups-Garous se réveillent et choisissent leur victime."
+            <strong>Quand utiliser le pouvoir</strong>
+            La nuit (ils sont appelés par le meneur de jeu pour se réveiller et choisir leur victime).
           </div>
         </div>
         <div class="strategy">
@@ -294,20 +292,12 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Démasquer et tuer tous les Loups-Garous.
           </div>
           <div class="detail-item">
             <strong>Pouvoir</strong>
-            Aucun pouvoir particulier.
-          </div>
-          <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
-            Jour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Les Villageois votent pour éliminer un suspect."
+            Aucun.
           </div>
         </div>
         <div class="strategy">
@@ -327,20 +317,16 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Découvrir les rôles des autres joueurs pour aider le village.
           </div>
           <div class="detail-item">
             <strong>Pouvoir</strong>
-            Chaque nuit, la Voyante peut découvrir l'identité d'un autre joueur.
+            Chaque nuit, la Voyante peut demander à découvrir l'identité d'un autre joueur.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
-            Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "La Voyante se réveille et désigne un joueur à sonder."
+            <strong>Quand utiliser le pouvoir</strong>
+            La nuit (elle est appelée par le meneur de jeu pour se réveiller avant les loups).
           </div>
         </div>
         <div class="strategy">
@@ -360,21 +346,18 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
-            Utiliser ses potions pour sauver des victimes ou éliminer des joueurs.
+            <strong>Objectif</strong>
+            Utiliser ses potions pour sauver une victime ou éliminer un joueur.
           </div>
           <div class="detail-item">
             <strong>Pouvoir</strong>
-            Possède deux potions à utiliser pendant la phase Nuit : une pour sauver une victime, l'autre pour éliminer un joueur.
+            Possède deux potions à utiliser UNE SEULE FOIS CHACUNE pendant la Nuit : une pour sauver une victime, l'autre pour éliminer un joueur.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
-            Nuit
+            <strong>Quand utiliser le pouvoir</strong>
+            La nuit (elle est appelée par le meneur de jeu pour se réveiller après les loups).
           </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "La Sorcière se réveille, je lui montre la victime des Loups-Garous. Va-t-elle user de sa potion de guérison, ou d’empoisonnement ?"
-          </div>
+          
         </div>
         <div class="strategy">
           <h3>💡 Stratégie de base</h3>
@@ -393,7 +376,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Éliminer un autre joueur avant de mourir.
           </div>
           <div class="detail-item">
@@ -401,12 +384,8 @@
             Si le Chasseur est éliminé, il peut tirer sur un autre joueur avant de mourir.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
-            Jour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Chasseur est éliminé et tire sur un autre joueur avant de mourir."
+            <strong>Quand utiliser le pouvoir</strong>
+            Quand il est éliminé du jeu (soit par les votes, soit par les Loups-Garous).
           </div>
         </div>
         <div class="strategy">
@@ -426,7 +405,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Espionner les Loups-Garous la nuit.
           </div>
           <div class="detail-item">
@@ -434,12 +413,8 @@
             La Petite Fille peut espionner les Loups-Garous la nuit.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
-            Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "La Petite Fille espionne les Loups-Garous la nuit."
+            <strong>Quand utiliser le pouvoir</strong>
+            Quand elle veut la nuit (sans se faire griller)
           </div>
         </div>
         <div class="strategy">
@@ -459,26 +434,37 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
-            Faire en sorte que les deux amoureux survivent jusqu'à la fin.
+            <strong>Objectif</strong>
+            Survivre jusqu'a la fin de la partie avec son amoureux
           </div>
+
           <div class="detail-item">
             <strong>Pouvoir</strong>
             Lie deux joueurs dès la première nuit, les deux amoureux sont avertis. Si l'un meurt, l'autre aussi.
+            
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
-            Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Cupidon lie deux joueurs dès la première nuit."
+            <strong>Quand utiliser le pouvoir</strong>
+            La première nuit (avant les Loups-Garous)
           </div>
         </div>
         <div class="strategy">
           <h3>💡 Stratégie de base</h3>
-          <p>Cupidon doit choisir des amoureux qui peuvent travailler ensemble pour survivre. Il doit s'assurer que les amoureux ne se font pas démasquer par les autres joueurs. Son rôle est de créer une alliance secrète qui peut influencer la dynamique du jeu, en particulier si les amoureux sont des personnages clés comme la Voyante ou le Chasseur.</p>
-        </div>
+          <div>
+            <ul>
+              <li>
+                -> Cupidon peut faire partie des amoureux.
+              </li>
+              <li>
+                -> Si les deux amoureux sont du même camp, ils gagnent ensemble.
+              </li>
+              <li>
+                -> Si un amoureux est un Loup-Garou et l'autre un Villageois, ils gagnent en s'entraidant pour éliminer les autres joueurs.
+              </li>
+            </ul>
+          </div>
+          </div>
+            
       </div>
 
       <!-- Voleur -->
@@ -492,25 +478,21 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
-            Échanger son rôle contre l'un des deux non distribués en début de partie.
+            <strong>Objectif</strong>
+            Gagner avec le rôle qu'il choisit de voler.
           </div>
           <div class="detail-item">
             <strong>Pouvoir</strong>
             Peut échanger son rôle contre l'un des deux non distribués en début de partie.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
-            Jour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Voleur échange son rôle contre l'un des deux non distribués en début de partie."
+            <strong>Quand utiliser le pouvoir</strong>
+            Première nuit (avant les Loups-Garous)
           </div>
         </div>
         <div class="strategy">
           <h3>💡 Stratégie de base</h3>
-          <p>Le Voleur doit choisir judicieusement le rôle à échanger pour maximiser son impact. Il doit éviter de se faire éliminer trop tôt dans la partie. Son rôle est de s’adapter à la situation en changeant de rôle, ce qui peut déstabiliser les stratégies des autres joueurs. Il doit rester discret pour ne pas devenir une cible.</p>
+          <p> S’adapter à la situation en jouant dur l'ambiguité de son role. Il doit rester discret pour ne pas devenir une cible.</p>
         </div>
       </div>
 
@@ -525,20 +507,16 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Survivre et aider le village à démasquer les Loups-Garous.
           </div>
           <div class="detail-item">
             <strong>Pouvoir</strong>
-            Aucun pouvoir particulier, mais sa naïveté peut être utilisée pour manipuler les autres joueurs.
+            Ne meurt pas (la première fois) si il est éliminé par les votes du village, mais perd son droit de vote.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
-            Jour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "L'Idiot du Village, malgré sa naïveté, peut être une clé pour démasquer les Loups-Garous."
+            <strong>Quand utiliser le pouvoir</strong>
+            Jour (lorsqu'il est éliminé par les votes du village)
           </div>
         </div>
         <div class="strategy">
@@ -558,25 +536,24 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Utiliser sa sagesse pour guider le village et survivre.
           </div>
           <div class="detail-item">
             <strong>Pouvoir</strong>
-            Peut donner des conseils stratégiques aux autres villageois.
+            Possède deux vies la nuit contre les loups. 
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Jour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "L'Ancien, avec sa sagesse, peut guider le village pour démasquer les Loups-Garous."
           </div>
         </div>
         <div class="strategy">
           <h3>💡 Stratégie de base</h3>
-          <p>L'Ancien doit utiliser sa sagesse pour aider le village à prendre des décisions stratégiques. Il doit éviter de se faire éliminer trop tôt dans la partie et rester un guide fiable pour les autres villageois. Son rôle est de conseiller et d’orienter les votes pour maximiser les chances de victoire du village.</p>
+          <p>l'ancien perds une vie si il est attqé par les loups la nuit mais sa carte est dévoilé.
+            si l'ancien est 
+
+          </p>
         </div>
       </div>
 
@@ -591,7 +568,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Survivre et aider le village à démasquer les Loups-Garous.
           </div>
           <div class="detail-item">
@@ -599,12 +576,8 @@
             Aucun pouvoir particulier, mais sa position de victime peut être utilisée pour manipuler les autres joueurs.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Jour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Bouc Émissaire, toujours victime, peut être une clé pour démasquer les Loups-Garous."
           </div>
         </div>
         <div class="strategy">
@@ -624,7 +597,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Protéger les villageois des morsures des Loups-Garous et survivre.
           </div>
           <div class="detail-item">
@@ -632,12 +605,8 @@
             Peut protéger un villageois des morsures des Loups-Garous chaque nuit.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Salvateur se réveille et protège un villageois des morsures des Loups-Garous."
           </div>
         </div>
         <div class="strategy">
@@ -657,7 +626,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Exercer sa vengeance et survivre.
           </div>
           <div class="detail-item">
@@ -665,12 +634,8 @@
             Peut jouer de la flûte pour manipuler les autres joueurs.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Jour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Joueur de Flûte se réveille et joue de la flûte pour manipuler les autres joueurs."
           </div>
         </div>
         <div class="strategy">
@@ -690,7 +655,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Faire en sorte que le groupe dans lequel il n'est pas soit décimé.
           </div>
           <div class="detail-item">
@@ -698,12 +663,8 @@
             Séparer le village en deux groupes en début de partie.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Début de partie
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "L'Abominable Sectaire sépare le village en deux groupes."
           </div>
         </div>
         <div class="strategy">
@@ -723,7 +684,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Remporter la partie s'il est éliminé au premier tour.
           </div>
           <div class="detail-item">
@@ -731,12 +692,8 @@
             Gagne la partie s'il est éliminé lors de la première journée.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Premier tour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "L'Ange est éliminé et remporte la partie."
           </div>
         </div>
         <div class="strategy">
@@ -756,7 +713,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Utiliser les cartes "spiritisme" pour poser des questions aux morts.
           </div>
           <div class="detail-item">
@@ -764,12 +721,8 @@
             Peut choisir quelle question sera posée parmi 5 ou qu'aucune question ne soit posée.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "La Gitane utilise les cartes 'spiritisme' pour poser des questions aux morts."
           </div>
         </div>
         <div class="strategy">
@@ -789,7 +742,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Prendre la carte d'un joueur éliminé avant que celle-ci ne soit révélée.
           </div>
           <div class="detail-item">
@@ -797,12 +750,8 @@
             Peut se révéler et prendre la carte d'un joueur éliminé.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Jour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "La Servante Dévouée se révèle et prend la carte d'un joueur éliminé."
           </div>
         </div>
         <div class="strategy">
@@ -822,7 +771,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Jouer le pouvoir d'un villageois non joué une nuit seulement.
           </div>
           <div class="detail-item">
@@ -830,12 +779,8 @@
             Peut jouer le pouvoir d'un villageois non joué une nuit seulement.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Bouffon joue le pouvoir d'un villageois non joué une nuit seulement."
           </div>
         </div>
         <div class="strategy">
@@ -855,7 +800,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Tuer un loup s'il est mangé par les Loups-Garous.
           </div>
           <div class="detail-item">
@@ -863,12 +808,8 @@
             Tue un loup s'il est mangé par les Loups-Garous.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Chevalier à l'Épée Rouillée tue un loup s'il est mangé par les Loups-Garous."
           </div>
         </div>
         <div class="strategy">
@@ -888,7 +829,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Choisir en début de partie s'il veut être un loup-garou ou un simple villageois.
           </div>
           <div class="detail-item">
@@ -896,12 +837,8 @@
             Peut choisir d'être un simple villageois ou un loup-garou.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Début de partie
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Chien-Loup choisit d'être un simple villageois ou un loup-garou."
           </div>
         </div>
         <div class="strategy">
@@ -921,7 +858,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Devenir un loup-garou si la personne qu'il a désignée en début de partie comme son modèle décède.
           </div>
           <div class="detail-item">
@@ -929,12 +866,8 @@
             Devient un loup-garou si son modèle meurt.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Début de partie
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "L'Enfant Sauvage devient un loup-garou si son modèle meurt."
           </div>
         </div>
         <div class="strategy">
@@ -954,7 +887,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Jouer des cartes événements connues de lui seul à chaque matinée.
           </div>
           <div class="detail-item">
@@ -962,12 +895,8 @@
             Peut jouer des cartes événements connues de lui seul.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Jour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Garde Champêtre joue des cartes événements connues de lui seul à chaque matinée."
           </div>
         </div>
         <div class="strategy">
@@ -987,7 +916,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Faire une seconde victime chaque nuit tant qu'aucun loup n'est mort.
           </div>
           <div class="detail-item">
@@ -995,12 +924,8 @@
             Peut faire une seconde victime chaque nuit tant qu'aucun loup n'est mort.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Grand Méchant Loup fait une seconde victime chaque nuit tant qu'aucun loup n'est mort."
           </div>
         </div>
         <div class="strategy">
@@ -1020,7 +945,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Permettre de voter deux fois en une journée.
           </div>
           <div class="detail-item">
@@ -1028,12 +953,8 @@
             Peut voter deux fois en une journée.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Jour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Juge Bègue permet de voter deux fois en une journée."
           </div>
         </div>
         <div class="strategy">
@@ -1053,7 +974,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Désigner seul la victime une nuit sur deux.
           </div>
           <div class="detail-item">
@@ -1061,12 +982,8 @@
             Désigne seul la victime une nuit sur deux.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Loup Blanc désigne seul la victime une nuit sur deux."
           </div>
         </div>
         <div class="strategy">
@@ -1086,7 +1003,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Obliger le meneur à grogner à chaque tour où il est assis à côté d'un loup.
           </div>
           <div class="detail-item">
@@ -1094,12 +1011,8 @@
             Oblige le meneur à grogner à chaque tour où il est assis à côté d'un loup.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Jour
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Montreur d'Ours oblige le meneur à grogner à chaque tour où il est assis à côté d'un loup."
           </div>
         </div>
         <div class="strategy">
@@ -1119,7 +1032,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Utiliser son flair pour désigner un joueur et savoir s'il s'agit d'un loup-garou.
           </div>
           <div class="detail-item">
@@ -1127,12 +1040,8 @@
             Peut désigner un joueur et savoir s'il s'agit d'un loup-garou.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Renard utilise son flair pour désigner un joueur et savoir s'il s'agit d'un loup-garou."
           </div>
         </div>
         <div class="strategy">
@@ -1152,7 +1061,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Représenter un villageois sur ses deux faces.
           </div>
           <div class="detail-item">
@@ -1160,12 +1069,8 @@
             Carte recto-verso représentant un villageois sur ses deux faces.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Début de partie
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Villageois-Villageois représente un villageois sur ses deux faces."
           </div>
         </div>
         <div class="strategy">
@@ -1185,7 +1090,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Se connaître mutuellement et se faire confiance.
           </div>
           <div class="detail-item">
@@ -1193,12 +1098,8 @@
             Se connaissent mutuellement et peuvent se faire confiance.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Début de partie
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Les Deux Sœurs se connaissent mutuellement et peuvent se faire confiance."
           </div>
         </div>
         <div class="strategy">
@@ -1218,7 +1119,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Se connaître mutuellement et se faire confiance.
           </div>
           <div class="detail-item">
@@ -1226,12 +1127,8 @@
             Se connaissent mutuellement et peuvent se faire confiance.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Début de partie
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Les Trois Frères se connaissent mutuellement et peuvent se faire confiance."
           </div>
         </div>
         <div class="strategy">
@@ -1251,7 +1148,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Infecter un villageois pour qu'il devienne un loup-garou.
           </div>
           <div class="detail-item">
@@ -1259,12 +1156,8 @@
             Peut infecter un villageois pour qu'il devienne un loup-garou.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "L'Infect Père des Loups infecte un villageois pour qu'il devienne un loup-garou."
           </div>
         </div>
         <div class="strategy">
@@ -1284,7 +1177,7 @@
         </div>
         <div class="details">
           <div class="detail-item">
-            <strong>Objectif principal</strong>
+            <strong>Objectif</strong>
             Utiliser le pouvoir de chaque villageois « spécial » une fois par partie.
           </div>
           <div class="detail-item">
@@ -1292,12 +1185,8 @@
             Peut utiliser le pouvoir de chaque villageois « spécial » une fois par partie.
           </div>
           <div class="detail-item">
-            <strong>Moment d'utilisation</strong>
+            <strong>Quand utiliser le pouvoir</strong>
             Nuit
-          </div>
-          <div class="detail-item">
-            <strong>Phrase type</strong>
-            "Le Comédien utilise le pouvoir de chaque villageois « spécial » une fois par partie."
           </div>
         </div>
         <div class="strategy">
